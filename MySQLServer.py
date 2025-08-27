@@ -7,9 +7,10 @@ def create_database():
             host = "localhost",
             user = "root",
             password = "Melek@1234",
-            database = "alx_book_store"
+            database = "alx_book_store",
+            ssl_disabled = True
         )
-        cursor = alx_book_store.cursor
+        cursor = alx_book_store.cursor()
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
     except mysql.connector.Error as e:
